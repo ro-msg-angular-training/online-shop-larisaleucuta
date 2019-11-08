@@ -1,0 +1,27 @@
+
+<div>
+    <h2 style="text-align: center;">My Products</h2>
+    <ul class="products">
+        <li *ngFor="let product of products" [class.selected]="product===selectedProduct" (click)="onSelect(product)">
+            <span class="badge">{{product.id}}.</span>
+            {{product.name}}
+        </li>
+    </ul>
+
+
+    <div *ngIf="selectedProduct" >
+        <h2 style="text-align: center;">{{selectedProduct.name}} Details</h2>
+        <div style="text-align: center;"><span>id: </span>{{selectedProduct.id}}</div>
+        <div style="text-align: center;">
+            <label>name:
+                <input [(ngModel)]="selectedProduct.name" placeholder="name" />
+            </label>
+        </div>
+        <div style="text-align: center;">
+            <label>price:
+                <input [(ngModel)]="selectedProduct.price" placeholder="price" />
+            </label>
+        </div>
+    </div>
+
+</div>
