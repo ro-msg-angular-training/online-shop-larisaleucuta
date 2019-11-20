@@ -1,0 +1,44 @@
+.container{
+    padding: 25px;
+    margin-top:50px;
+    
+    background-color:#ecf4f3;
+}
+.btn {
+    background-color: #57a99a;
+    margin:5px;
+    
+}
+.imagine{
+    width:260px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(2, 116, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.elemente{
+    padding-top:30px;
+}
+
+
+
+.fade.in {
+    opacity: 1;
+  }
+  .modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  
+  .modal-backdrop .fade .in {
+    opacity: 0.5 !important;
+  }
+  
+  
+  .modal-backdrop.fade {
+      opacity: 0.5 !important;
+  }
+
+  .modal{
+      display: block;
+  }
+ 

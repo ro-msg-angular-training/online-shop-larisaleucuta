@@ -3,13 +3,14 @@ import { Product } from '../product';
 import { ProductService } from '../product.service';
 
 
+
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ProductsComponent implements OnInit {
-  products: Product[];
+export class DashboardComponent implements OnInit {
+  products: Product[]=[];
 
   constructor(private productService: ProductService) { }
 
@@ -17,10 +18,7 @@ export class ProductsComponent implements OnInit {
     this.getProducts();
   }
 
-
   getProducts(): void{
     this.productService.getProducts().subscribe(products=>this.products=products);
   }
-
-  
 }

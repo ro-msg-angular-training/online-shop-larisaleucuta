@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<app-products></app-products>
+<nav class="navbar px-0 ">
+    <div class="container-fluid p-0">
+        <div class="row w-100 p-0">
+                <div class="col-2 pr-0"> <h1>{{title}}</h1></div>
+            <div class="col-9 pt-2">
+               
+                <button type="button"
+                    class="btn btn-secondary" routerLink="/dashboard">Dashboard</button>
+                    <button type="button"
+                        class="btn btn-secondary ml-2" routerLink="/products">Products</button>
+            </div>
+
+            <div class="col-1" >
+                <button type="button"
+                        class="btn btn-secondary mt-2 ml-3" routerLink="/login">Login</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

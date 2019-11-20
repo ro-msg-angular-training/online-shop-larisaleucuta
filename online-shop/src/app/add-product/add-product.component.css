@@ -1,0 +1,28 @@
+.container{
+    padding:50px;
+    margin-top:30px;
+    background-color:#ecf4f3;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+  .btn {
+    background-color: #57a99a;
+    margin:5px;
+}
+.row{
+    padding-bottom:25px;
+}
+input{
+    width:900px;
+}
+.tata{
+    position: relative;
+    left:42%;
+
+}
+
+  

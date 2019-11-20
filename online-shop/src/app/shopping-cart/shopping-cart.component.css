@@ -1,0 +1,32 @@
+.container{
+    padding: 25px;
+    margin-top:20px;
+
+}
+.btn {
+    background-color: #57a99a;
+    margin:5px;
+    
+}
+.table {
+    margin-left:auto; 
+    margin-right:auto;
+   
+  }
+  .head{
+    background-color:#57a99a;
+  }
+  .tableItem{
+    background-color:#d1eecc;
+  
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  .aliniat{
+    text-align: center;
+  }
+  .col-sm-6{
+    margin-top:10px;
+    margin-left:5px;
+  }

@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row ">
         <div class="col-sm-6">
-            <h2>Products: </h2>
+            <h2>My Order: </h2>
         </div>
-        <div class="col-sm-5"></div>
-        <div class="col-sm-1"><a routerLink="/add"><button type="button" class="btn ">Add</button></a>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-1"><button type="button" class="btn btn-lg">Checkout</button>
         </div>
     </div>
 
@@ -12,9 +12,10 @@
         <thead class="head">
             <tr>
                 <th scope="col">Category</th>
-                <th scope="col">Name</th>
+                <th scope="col">Product Name</th>
                 <th scope="col">Price</th>
-                <th scope="col" class="aliniat">Details</th>
+                <th scope="col" class="aliniat">Quantity</th>
+                <th scope="col" class="aliniat"></th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +23,9 @@
                 <td>{{product.category}}</td>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
+                <td class="aliniat">1</td>
                 <td class="aliniat">
-                    <a routerLink="/detail/{{product.id}}">
-                        <button type="button" class="btn btn-secondary">Details</button>
-                    </a>
+                    <button type="button" class="btn btn-secondary">Remove</button>
                 </td>
             </tr>
         </tbody>
