@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2 style="text-align: center;">Sign in</h2>
+        <hr>
+        <div class="form-group">
+            <label>Username:</label><input formControlName="username" class="form-control" placeholder="Enter username"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Login</button>
+    </form>
+</div>
+
+
+<div id="myModalgj" class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" *ngIf="myModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: red" class="modal-title" id="exampleModalLongTitle">Invalid username or password</h5>
+        <button class="close" (click)="showModal();closeModal()"><i class="far fa-circle pt-1"></i></button>
+      </div>
+      <div class="modal-body">
+        <h5> Please try again </h5>
+      </div>
+    </div>
+  </div>
+</div>

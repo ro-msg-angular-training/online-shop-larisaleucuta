@@ -1,24 +1,31 @@
 .container{
-    padding: 25px;
     margin-top:50px;
-    
-    background-color:#ecf4f3;
+    box-shadow: 0 4px 8px 0 rgba(2, 116, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 .btn {
     background-color: #57a99a;
     margin:5px;
-    
 }
-.imagine{
-    width:260px;
-    margin-top: 30px;
-    box-shadow: 0 4px 8px 0 rgba(2, 116, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 .elemente{
-    padding-top:30px;
+  padding-top:40px;
+
 }
 
+.col-sm-5{
+    background-color:white;
+    padding:25px;
 
+}
+.col-sm-7{
+ background-color:#ecf4f3;
+ padding-bottom:35px;
+}
+.col-sm-6{
+    margin-top:20px;
+    margin-bottom:40px;
+}
 
 .fade.in {
     opacity: 1;
@@ -28,12 +35,12 @@
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-  
+
   .modal-backdrop .fade .in {
     opacity: 0.5 !important;
   }
-  
-  
+
+
   .modal-backdrop.fade {
       opacity: 0.5 !important;
   }
@@ -41,4 +48,3 @@
   .modal{
       display: block;
   }
- 

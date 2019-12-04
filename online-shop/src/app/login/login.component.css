@@ -1,0 +1,19 @@
+.container{
+    width:350px;
+    border: 1px solid black;
+    padding:30px;
+    margin-top:50px;
+    margin-bottom:257px;
+    background-color:white ;
+}
+.btn{
+    width:287px;
+    background-color:#347474;
+    border:1px solid black;
+}
+hr.new1 {
+    border-top: 1px solid red;
+  }
+ .modal{
+   display: block;
+ }

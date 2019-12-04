@@ -1,34 +1,72 @@
+<script src="../../../../../../New folder/backend/index.js"></script>
 <div class="container">
-    <div class="row ">
-        <div class="col-sm-6">
-            <h2>My Order: </h2>
-        </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-1"><button type="button" class="btn btn-lg">Checkout</button>
-        </div>
+  <div class="row ">
+    <div class="col-sm-6">
+      <h2>My Order: </h2>
     </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-1">
+      <button (click)="sendOrder();showModal()" type="button" class="btn btn-lg">Checkout</button>
+    </div>
+  </div>
 
-    <table class="table table-bordered container ">
-        <thead class="head">
-            <tr>
-                <th scope="col">Category</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
-                <th scope="col" class="aliniat">Quantity</th>
-                <th scope="col" class="aliniat"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products" class="tableItem">
-                <td>{{product.category}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td class="aliniat">1</td>
-                <td class="aliniat">
-                    <button type="button" class="btn btn-secondary">Remove</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table table-bordered container ">
+    <thead class="head">
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col" class="aliniat">Quantity</th>
+      <th scope="col" class="aliniat"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of productList" class="tableItem">
+      <td class="centru">{{product.category}}</td>
+      <td class="centru">{{product.name}}</td>
+      <td class="centru">{{product.price}} RON</td>
+      <td class="cantitate">
+        <div class="input-group ">
+          <span class="input-group-btn">
+              <button type="button" class="btn1 btn-danger btn-number " data-type="minus" data-field="quant[2]"
+                      (click)="decreaseQuantity(product.id)"><i class="fas fa-minus"></i></button>
+          </span>
+          <input type="text" name="quant[2]" class="form-control input-number" value="{{getQuantity(product.id)}}">
+          <span class="input-group-btn">
+              <button type="button" class="btn1 btn-success btn-number" data-type="plus" data-field="quant[2]"
+                      (click)="increaseQuantity(product.id)"><i class="fas fa-plus"></i></button>
+          </span>
+        </div>
+
+      </td>
+      <td class="aliniat">
+        <button type="button" class="btn btn-secondary" (click)="removeProduct(product.id)">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="modal bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" *ngIf="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="color: #96d1c7">
+          <h4  class="modal-title">Congrats!</h4>
+        </div>
+        <div class="modal-body">
+          <h5>Your order has been placed! </h5>
+          <h5>Thank you!</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" routerLink="/dashboard">Back to shopping!</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+
+
+
+
+
+

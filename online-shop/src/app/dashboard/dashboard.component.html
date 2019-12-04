@@ -1,8 +1,24 @@
-<h3>Top Products</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let product of products" class="col-1-4" routerLink="/detail/{{product.id}}">
-    <div class="module product">
-      <h4>{{product.name}}</h4>
+<div class="container">
+<div class="row ">
+    <div class="col-sm-6">
+        <h2>Products: </h2>
     </div>
-  </a>
+    <div class="col-sm-5"></div>
+    <div class="col-sm-1"><a routerLink="/add"><button type="button" class="btn " [hidden]="!admin" >Add</button></a>
+    </div>
+</div>
+</div>
+
+<div class="card-columns">
+<div class="card text-center" *ngFor="let product of products">
+    <img class="img-fluid" src="{{product.image}}" />
+  <div class="card-body">
+    <h4 class="card-title">{{product.name}}</h4>
+
+    <p class="card-text">Category: {{product.category}}</p>
+
+    <p class="card-text">Price: {{product.price}}</p>
+    <button type="button" routerLink="/detail/{{product.id}}" class="btn btn-primary">Details</button>
+  </div>
+</div>
 </div>

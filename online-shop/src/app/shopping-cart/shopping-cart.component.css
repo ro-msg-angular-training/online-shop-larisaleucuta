@@ -4,21 +4,22 @@
 
 }
 .btn {
-    background-color: #57a99a;
+    background-color: black;
     margin:5px;
-    
+    color:white;
+
 }
 .table {
-    margin-left:auto; 
+    margin-left:auto;
     margin-right:auto;
-   
+
   }
   .head{
-    background-color:#57a99a;
+    background-color:dimgrey;
   }
   .tableItem{
-    background-color:#d1eecc;
-  
+    background-color:white;
+
   }
   table, th, td {
     border: 1px solid black;
@@ -30,3 +31,27 @@
     margin-top:10px;
     margin-left:5px;
   }
+  .center{
+    width: 150px;
+    margin: 40px auto;
+  }
+  .cantitate{
+    width:140px ;
+    margin: 40px auto;
+    padding-top:20px;
+  }
+  .centru{
+    padding-top:20px;
+  }
+  .btn1{
+    margin:0;
+  }
+  .form-control{
+    height:30px;
+    text-align: center;
+  }
+.modal{
+  display: block;
+}
+
+
