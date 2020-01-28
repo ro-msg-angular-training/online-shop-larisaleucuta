@@ -10,7 +10,7 @@
 </div>
 
 <div class="card-columns">
-<div class="card text-center" *ngFor="let product of products">
+<div class="card text-center" *ngFor="let product of (products$ | async)">
     <img class="img-fluid" src="{{product.image}}" />
   <div class="card-body">
     <h4 class="card-title">{{product.name}}</h4>

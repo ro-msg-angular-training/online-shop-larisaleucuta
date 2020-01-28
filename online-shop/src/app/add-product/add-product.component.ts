@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { EditProductComponent } from '../edit-product/edit-product.component';
+import {Store} from '@ngrx/store';
+import * as ProductActions from '../store/product.actions';
 
 @Component({
   selector: 'app-add-product',
@@ -16,7 +18,8 @@ export class AddProductComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private productService: ProductService,
-    private location: Location) { }
+    private location: Location,
+              private store: Store<{ Product: { products: Product[] } }>) { }
 
   ngOnInit() {
     this.getProducts();
@@ -32,9 +35,10 @@ export class AddProductComponent implements OnInit {
 
   add(name: string, category: string, price: number, image: string, description: string): void {
     if (!name && !category && !price && !image && !description) { return; }
-    this.productService.addProduct({ name, category, price, image, description } as Product)
-      .subscribe(() => this.goBack(), product => {
-        this.products.push(product)
-      });
+    // this.productService.addProduct({ name, category, price, image, description } as Product)
+    //   .subscribe(() => this.goBack(), product => {
+    //     this.products.push(product)
+    //   });
+    this.store.dispatch(new ProductActions.AddProduct( new Product(45,name,category,price,image,description)) )
   }
 }

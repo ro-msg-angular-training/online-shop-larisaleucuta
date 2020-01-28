@@ -14,6 +14,15 @@ import {LoginComponent} from './login/login.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AlertComponent} from './alert/alert.component';
 
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {StoreModule} from '@ngrx/store';
+import {productReducer} from './store/product.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {ProductEffects} from './store/product.effects';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {environment} from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +40,11 @@ import {AlertComponent} from './alert/alert.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    StoreModule.forRoot({Product: productReducer}),
+    EffectsModule.forRoot([ProductEffects]),
+    StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

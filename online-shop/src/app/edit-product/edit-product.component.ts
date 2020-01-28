@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-edit-product',
@@ -43,7 +44,7 @@ export class EditProductComponent implements OnInit {
     });
   }
 
-  
+
 
   getProducts(): void {
     this.productService.getProduct(this.route.snapshot.params.id).subscribe(product => this.product = product);
@@ -57,5 +58,5 @@ export class EditProductComponent implements OnInit {
     this.productService.updateProduct(this.productForm.value , this.product.id).subscribe(() => this.goBack());
   }
 
-  
+
 }
